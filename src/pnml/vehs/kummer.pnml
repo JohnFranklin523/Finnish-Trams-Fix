@@ -26,6 +26,7 @@ PROPS(VEH,
     running_cost_factor: 30;
     speed: 40 km/h;
     weight: 8.5 ton;
+    tram_type: ELRL;
 )
 GFX(VEH,
     additional_text: MORE_TEXT("2", string(STR_D_KUMMER),

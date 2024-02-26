@@ -46,6 +46,7 @@ PROPS(VEH,
     running_cost_factor: 3;
     speed: 20 km/h;
     weight: 1.6 ton;
+    tram_type: RAIL;
 )
 GFX(VEH,
     additional_text: MORE_TEXT("2", string(STR_D_HORSE),

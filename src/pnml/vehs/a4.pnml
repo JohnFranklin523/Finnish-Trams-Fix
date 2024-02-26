@@ -33,6 +33,7 @@ PROPS(VEH,
     running_cost_factor: 48;
     speed: 50 km/h;
     weight: 11 ton;
+    tram_type: ELRL;
 )
 GFX(VEH,
     additional_text: MORE_TEXT("2", string(STR_D_A4), string(STR_TRIVIA_A4));
