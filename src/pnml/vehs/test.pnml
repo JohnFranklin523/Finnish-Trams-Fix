@@ -1,0 +1,219 @@
+#if 0
+/*[[MAKE
+build/test_4.png src/gfx/xcf/vehs/testveh.xcf bg 4;
+build/test4_6w.png src/gfx/xcf/vehs/testveh.xcf bg 4_6w;
+build/test_6.png src/gfx/xcf/vehs/testveh.xcf bg 6;
+build/test_6a.png src/gfx/xcf/vehs/testveh.xcf bg 6_arti;
+build/test_8.png src/gfx/xcf/vehs/testveh.xcf bg 8;
+build/test8_6w.png src/gfx/xcf/vehs/testveh.xcf bg 8_6w;
+]]*/
+
+spriteset(spr_test8, "build/test_8.png") {
+    tmpl_def(8)
+}
+
+item (FEAT_ROADVEHS, test8) {
+    property {
+        cargo_allow_refit: [PASS, TOUR];
+        cargo_capacity: 1;
+        cargo_disallow_refit: [];
+        climates_available: ALL_CLIMATES;
+        cost_factor: 0;
+        default_cargo_type: PASS;
+        introduction_date: date(0,01,01);
+        length: 8;
+        loading_speed: 5;
+        name: string(STR_NAME_TEST8);
+        misc_flags: bitmask(ROADVEH_FLAG_TRAM);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        non_refittable_cargo_classes: NO_CARGO_CLASS;
+        power: 500hp;
+        refit_cost: 0;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        running_cost_base: RUNNING_COST_ROADVEH;
+        running_cost_factor: 0;
+        speed: 50km/h;
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+        weight: 10ton;
+    }
+    graphics {
+        default: spr_test8;
+    }
+}
+
+spriteset(spr_test6, "build/test_6.png") {
+    tmpl_def(6)
+}
+
+item (FEAT_ROADVEHS, test6) {
+    property {
+        cargo_allow_refit: [PASS, TOUR];
+        cargo_capacity: 1;
+        cargo_disallow_refit: [];
+        climates_available: ALL_CLIMATES;
+        cost_factor: 0;
+        default_cargo_type: PASS;
+        introduction_date: date(0,01,01);
+        length: 6;
+        loading_speed: 5;
+        name: string(STR_NAME_TEST6);
+        misc_flags: bitmask(ROADVEH_FLAG_TRAM);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        non_refittable_cargo_classes: NO_CARGO_CLASS;
+        power: 500hp;
+        refit_cost: 0;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        running_cost_base: RUNNING_COST_ROADVEH;
+        running_cost_factor: 0;
+        speed: 50km/h;
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+        weight: 10ton;
+    }
+    graphics {
+        default: spr_test6;
+    }
+}
+
+spriteset(spr_test6a, "build/test_6a.png") {
+    tmpl_def(6)
+}
+
+switch (FEAT_ROADVEHS, SELF, sw_test6a_arti, extra_callback_info1) {
+    1: test6a;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch (FEAT_ROADVEHS, SELF, sw_test6a_gfx, position_in_consist) {
+    0: spr_test6;
+    1: spr_test6a;
+}
+
+item (FEAT_ROADVEHS, test6a) {
+    property {
+        cargo_allow_refit: [PASS, TOUR];
+        cargo_capacity: 1;
+        cargo_disallow_refit: [];
+        climates_available: ALL_CLIMATES;
+        cost_factor: 0;
+        default_cargo_type: PASS;
+        introduction_date: date(0,01,01);
+        length: 6;
+        loading_speed: 5;
+        name: string(STR_NAME_TEST6A);
+        misc_flags: bitmask(ROADVEH_FLAG_TRAM);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        non_refittable_cargo_classes: NO_CARGO_CLASS;
+        power: 500hp;
+        refit_cost: 0;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        running_cost_base: RUNNING_COST_ROADVEH;
+        running_cost_factor: 0;
+        speed: 50km/h;
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+        weight: 10ton;
+    }
+    graphics {
+        articulated_part: sw_test6a_arti;
+        default: sw_test6a_gfx;
+    }
+}
+
+spriteset(spr_test4, "build/test_4.png") {
+    tmpl_def(4)
+}
+
+item (FEAT_ROADVEHS, test4) {
+    property {
+        cargo_allow_refit: [PASS, TOUR];
+        cargo_capacity: 1;
+        cargo_disallow_refit: [];
+        climates_available: ALL_CLIMATES;
+        cost_factor: 0;
+        default_cargo_type: PASS;
+        introduction_date: date(0,01,01);
+        length: 4;
+        loading_speed: 5;
+        name: string(STR_NAME_TEST4);
+        misc_flags: bitmask(ROADVEH_FLAG_TRAM);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        non_refittable_cargo_classes: NO_CARGO_CLASS;
+        power: 500hp;
+        refit_cost: 0;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        running_cost_base: RUNNING_COST_ROADVEH;
+        running_cost_factor: 0;
+        speed: 50km/h;
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+        weight: 10ton;
+    }
+    graphics {
+        default: spr_test4;
+    }
+}
+
+spriteset(spr_test8_6w, "build/test8_6w.png") {
+    tmpl_def(8)
+}
+
+item (FEAT_ROADVEHS, test8_6w) {
+    property {
+        cargo_allow_refit: [PASS, TOUR];
+        cargo_capacity: 1;
+        cargo_disallow_refit: [];
+        climates_available: ALL_CLIMATES;
+        cost_factor: 0;
+        default_cargo_type: PASS;
+        introduction_date: date(0,01,01);
+        length: 8;
+        loading_speed: 5;
+        name: string(STR_NAME_TEST86W);
+        misc_flags: bitmask(ROADVEH_FLAG_TRAM);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        non_refittable_cargo_classes: NO_CARGO_CLASS;
+        power: 500hp;
+        refit_cost: 0;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        running_cost_base: RUNNING_COST_ROADVEH;
+        running_cost_factor: 0;
+        speed: 50km/h;
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+        weight: 10ton;
+    }
+    graphics {
+        default: spr_test8_6w;
+    }
+}
+
+spriteset(spr_test4_6w, "build/test4_6w.png") {
+    tmpl_def(4)
+}
+
+item (FEAT_ROADVEHS, test4_6w) {
+    property {
+        cargo_allow_refit: [PASS, TOUR];
+        cargo_capacity: 1;
+        cargo_disallow_refit: [];
+        climates_available: ALL_CLIMATES;
+        cost_factor: 0;
+        default_cargo_type: PASS;
+        introduction_date: date(0,01,01);
+        length: 4;
+        loading_speed: 5;
+        name: string(STR_NAME_TEST46W);
+        misc_flags: bitmask(ROADVEH_FLAG_TRAM);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        non_refittable_cargo_classes: NO_CARGO_CLASS;
+        power: 500hp;
+        refit_cost: 0;
+        refittable_cargo_classes: bitmask(CC_PASSENGERS);
+        running_cost_base: RUNNING_COST_ROADVEH;
+        running_cost_factor: 0;
+        speed: 50km/h;
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+        weight: 10ton;
+    }
+    graphics {
+        default: spr_test4_6w;
+    }
+}
+#endif

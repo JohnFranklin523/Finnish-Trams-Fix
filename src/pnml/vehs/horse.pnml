@@ -1,0 +1,73 @@
+#define VEH horse
+/*[[MAKE
+build/horse_car.png src/gfx/xcf/vehs/horse.xcf bg car;
+build/horse_idle.png src/gfx/xcf/vehs/horse.xcf bg horse_idle;
+build/horse_anim1.png src/gfx/xcf/vehs/horse.xcf bg horse_anim_1;
+build/horse_anim2.png src/gfx/xcf/vehs/horse.xcf bg horse_anim_2;
+build/horse_anim3.png src/gfx/xcf/vehs/horse.xcf bg horse_anim_3;
+]]*/
+
+SPR_PUR(ID(spr_pur), "build/horse_car.png")
+SPR(ID(spr_car), "build/horse_car.png", 3)
+SPR(ID(spr_horse_idle), "build/horse_idle.png", 3)
+SPR(ID(spr_horse_anim1), "build/horse_anim1.png", 3)
+SPR(ID(spr_horse_anim2), "build/horse_anim2.png", 3)
+SPR(ID(spr_horse_anim3), "build/horse_anim3.png", 3)
+
+SWITCH(ID(sw_arti), extra_callback_info1,
+    1: ID(arti);
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+)
+SWITCH_SUBTYPE(ID(sw_cst),
+    string(STR_SUBTYPE_REAL, string(STR_HRO), string(STR_LIVERY_HORSE))
+)
+SWITCH_RECOLOUR(ID(sw_cm), recolour_horse)
+SWITCH(ID(sw_horse_anim), motion_counter % 3,
+    0: ID(spr_horse_anim1);
+    1: ID(spr_horse_anim2);
+    2: ID(spr_horse_anim3);
+)
+SWITCH(ID(sw_state), vehicle_is_stopped,
+    0: ID(sw_horse_anim);
+    1: ID(spr_horse_idle);
+)
+
+PROPS_COMMON(VEH)
+PROPS(VEH,
+    cargo_capacity: 1;
+    cost_factor: 3;
+    introduction_date: date(1890,01,01);
+    length: 3;
+    loading_speed: 5;
+    name: string(STR_NAME_HORSE);
+    model_life: 50;
+    retire_early: 25;
+    power: 10 hpM;
+    running_cost_factor: 3;
+    speed: 20 km/h;
+    weight: 1.6 ton;
+)
+GFX(VEH,
+    additional_text: MORE_TEXT("2", string(STR_D_HORSE),
+                               string(STR_TRIVIA_HORSE));
+    articulated_part: ID(sw_arti);
+    cargo_capacity: 0;
+    cargo_subtype_text: ID(sw_cst);
+    colour_mapping: ID(sw_cm);
+    default: ID(sw_state);
+    purchase: ID(spr_pur);
+)
+PROPS_COMMON_ARTI(ID(arti))
+PROPS(ID(arti),
+    cargo_capacity: 18;
+    loading_speed: 5;
+    length: 3;
+    name: string(STR_NAME_HORSE);
+)
+GFX(ID(arti),
+    cargo_subtype_text: ID(sw_cst);
+    colour_mapping: ID(sw_cm);
+    default: ID(spr_car);
+)
+
+#undef VEH

@@ -1,0 +1,5 @@
+0.2 (26/2/2024)
+-----------------
+Adjust loading speeds
+Make trams still reliable enough 25-30 years after disappearing from purchase list
+Fix sprite misalignment of MLRV I

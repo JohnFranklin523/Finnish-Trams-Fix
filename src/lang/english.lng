@@ -1,0 +1,34 @@
+##grflangid 0x01
+STR_GRF_DESCRIPTION :Trams used in Finland from the late 19th century horse-driven trams to modern day articulated trams.
+
+STR_PARAM_DEFAULT_LIVERY_NAME          :Default livery for new trams
+STR_PARAM_DEFAULT_LIVERY_DESC          :Choose the default livery for newly purchased trams. You can always refit to 2cc or realistic livery.
+STR_PARAM_DEFAULT_LIVERY_OPT_REALISTIC :Realistic
+
+STR_MORE_TEXT_LIVERIES    :Liveries
+STR_MORE_TEXT_DESIGNATION :Designation
+
+STR_LIVERY_CREAM_GREEN          :Cream top, green bottom
+STR_LIVERY_GREEN_YELLOW_ACCENTS :Green, yellow accents
+STR_LIVERY_HORSE                :Green, blue uniforms for drivers
+STR_LIVERY_NRVI                 :White sides, red top and bottom (pre-1986 livery)
+STR_LIVERY_WHITE_BLUE           :White top, blue bottom
+STR_LIVERY_YELLOW_GREEN         :Yellow top, green bottom
+STR_LIVERY_YELLOW_PALE_GREEN    :Yellow top, pale green bottom
+
+STR_NAME_HORSE      :Horse-drawn tram
+
+STR_TRIVIA_A3       :Common in Sweden and Denmark as well.
+STR_TRIVIA_A4       :First fully enclosed tram in use in the Helsinki tram network.
+STR_TRIVIA_A12      :Purchased for the 1940 Summer Olympics in Helsinki, which were ultimately cancelled due to World War II.
+STR_TRIVIA_ARTICXL  :The upcoming Artic XL will feature bi-directional elements, such as doors on both sides. It will serve the light rail connection between Helsinki and Espoo.
+STR_TRIVIA_HMIV     :A typical design of its era, this tram was sometimes used with a trailer.
+STR_TRIVIA_HMV      :Can be distinguished from its little brother by the tilted driver's window. This staple design would serve Helsinki for over fifty years.
+STR_TRIVIA_HORSE    :The origin of tram transportation in Finland, these valiant creatures were soon retired in place of electric trams.
+STR_TRIVIA_KUMMER   :First electric tram in Finland. It had no doors, and featured a simple trolley pole for electrification.
+STR_TRIVIA_MLRVI    :The infamous "Vauriotram" (literal translation: "Damage Tram") was ultimately ill-suited for the Helsinki tram network, and was pulled early from service.
+STR_TRIVIA_MLNRVII  :This old but succesful design was modernized from NRV II by adding a low-floor middle section.
+STR_TRIVIA_MLNRVIII :The free-turning bogies of this modern tram were designed specially for the steep curves and inclines of the Helsinki tram network.
+STR_TRIVIA_NRVI     :NRV I was the first new model for the Helsinki City Transport in over a decade. Variants of the design are still in use to this day.
+STR_TRIVIA_NRVII    :The practically identical twin brother of NRV I.
+

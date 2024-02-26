@@ -1,0 +1,36 @@
+##grflangid 0x27
+##plural 0
+##gender ma m f
+##case fp fs mp ms
+STR_GRF_DESCRIPTION :Tram usati in Finlandia, dai modelli a cavalli della fine del XIX secolo ai tram articolati dei giorni nostri.
+
+STR_PARAM_DEFAULT_LIVERY_NAME          :Livrea di default per i nuovi tram
+STR_PARAM_DEFAULT_LIVERY_DESC          :Scegli la livrea di default per i tram acquistati nuovi. I tram possono sempre essere riadattati a una livrea realistica o "2cc".
+STR_PARAM_DEFAULT_LIVERY_OPT_REALISTIC :Realistica
+
+STR_MORE_TEXT_LIVERIES    :Livree
+STR_MORE_TEXT_DESIGNATION :Tipo di tram
+
+STR_LIVERY_CREAM_GREEN          :Crema sopra, verde sotto
+STR_LIVERY_GREEN_YELLOW_ACCENTS :Verde con tocchi di giallo
+STR_LIVERY_HORSE                :Verde, uniformi blu per i cocchieri
+STR_LIVERY_NRVI                 :Lati bianchi, tetto e parte inferiore rossi (livrea antecedente al 1986)
+STR_LIVERY_WHITE_BLUE           :Bianco sopra, blu sotto
+STR_LIVERY_YELLOW_GREEN         :Giallo sopra, verde sotto
+STR_LIVERY_YELLOW_PALE_GREEN    :Giallo sopra, verde chiaro sotto
+
+STR_NAME_HORSE      :Tram a cavalli
+
+STR_TRIVIA_A3       :Diffuso anche in Svezia e in Danimarca.
+STR_TRIVIA_A4       :Il primo modello di tram coperto a essere usato sulla rete di Helsinki.
+STR_TRIVIA_A12      :Acquistato per le Olimpiadi estive del 1940 che avrebbero dovuto tenersi ad Helsinki, purtroppo cancellate a causa della guerra.
+STR_TRIVIA_ARTICXL  :L'Artic XL di imminente uscita avrà elementi bidirezionali, con porte da ambo i lati. Farà da metropolitana leggera fra Helsinki ed Espoo.
+STR_TRIVIA_HMIV     :Un tipo di tram molto diffuso nella sua epoca, era a volte usato con un rimorchio.
+STR_TRIVIA_HMV      :Si può distinguere dal suo fratello minore dalla finestra del guidatore spostata. Questo tipo di tram sarebbe diventato comune a Helsinki per oltre cinquant'anni.
+STR_TRIVIA_HORSE    :I pionieri del trasporto pubblico finlandese, queste bestie valorose sarebbero presto sostituite dai tram elettrici.
+STR_TRIVIA_KUMMER   :Il primo tram elettrico finlandese. Non aveva portiere, e aveva una semplice pertica per captare la corrente.
+STR_TRIVIA_MLRVI    :Chiamato anche "Vauriotram" (traduzione letterale: "tram che danneggia"), rivelatosi inadatto per la rete di Helsinki: venne presto accantonato.
+STR_TRIVIA_MLNRVII  :Questo progetto vecchio ma di successo è una modernizzazione del modello NRV II con l'aggiunta di una sezione intermedia a pianale ribassato.
+STR_TRIVIA_MLNRVIII :I carrelli di questo tram moderno, dotate di buone capacità di snodo, sono stati progettati apposta per le curve strette della rete tramviaria di Helsinki.
+STR_TRIVIA_NRVI     :L'NRV I è stato il primo modello acquistato nuovo dalla società dei trasporti di Helsinki in oltre un decennio. Alcune sue varianti sono tuttora in uso.
+STR_TRIVIA_NRVII    :Quasi un fratello gemello dell'NRV I.

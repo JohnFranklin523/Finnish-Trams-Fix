@@ -1,0 +1,35 @@
+##grflangid 0x3a
+##plural 11
+##gender m f
+STR_GRF_DESCRIPTION :핀란드에서 쓰였던 19세기 후반의 우마차부터 현대의 굴절식 트램까지
+
+STR_PARAM_DEFAULT_LIVERY_NAME          :신규 트램의 기본 도색
+STR_PARAM_DEFAULT_LIVERY_DESC          :새롭게 구매한 트램의 기본 도색을 선택하십시오. 2cc 또는 실제 도색으로 언제든지 개조가 가능합니다.
+STR_PARAM_DEFAULT_LIVERY_OPT_REALISTIC :현실적
+
+STR_MORE_TEXT_LIVERIES    :도색
+STR_MORE_TEXT_DESIGNATION :지정자
+
+STR_LIVERY_CREAM_GREEN          :크림색 상부, 초록색 하부
+STR_LIVERY_GREEN_YELLOW_ACCENTS :초록색 바탕에 노란색 강조선
+STR_LIVERY_HORSE                :초록색, 운전사들의 파란 제복
+STR_LIVERY_NRVI                 :하얀색 측면, 빨간색 상/하부 (1986년 이전 도색)
+STR_LIVERY_WHITE_BLUE           :하얀색 상부, 파란색 하부
+STR_LIVERY_YELLOW_GREEN         :노란색 상부, 초록색 하부
+STR_LIVERY_YELLOW_PALE_GREEN    :노란색 상부, 엷은 초록색 하부
+
+STR_NAME_HORSE      :우마차
+
+STR_TRIVIA_A3       :덴마크와 스웨덴에서도 흔히 찾아볼 수 있습니다.
+STR_TRIVIA_A4       :헬싱키 트램에서 최초로 쓰인 폐쇄식 차량이었습니다.
+STR_TRIVIA_A12      :제 2차 세계대전으로 인해 취소된 1940년 헬싱키 하계 올림픽을 위해 구매되었습니다.
+STR_TRIVIA_ARTICXL  :새로 출시되는 Arctic XL은 양측에 문을 설치하여 양방향 호환성을 갖출 계획이며, 헬싱키와 에스포간 경전철에서 사용될 예정입니다.
+STR_TRIVIA_HMIV     :그 시대의 전형적인 디자인으로서, 이 트램은 트레일러와 함께 사용되기도 하였습니다.
+STR_TRIVIA_HMV      :차장석의 굽어진 창문으로 후속 모델과 구분할 수 있습니다. 굽어진 ㄷ자 모양의 이 디자인은 헬싱키 트램에서 50년 이상 사용되었습니다.
+STR_TRIVIA_HORSE    :핀란드 트램의 기원이었으며, 이 우마차들은 곧 전기 트램의 대체로 인해 사라졌습니다.
+STR_TRIVIA_KUMMER   :핀란드 최초의 전기 트램입니다. 문이 없고, 전철화를 위한 단순한 집전봉이 설치되어 있었습니다.
+STR_TRIVIA_MLRVI    :악명 높은 "Vauriotram" (말 그대로 "고장 트램")은 헬싱키 트램과 매우 어울리지 않았으며, 조기에 편성에서 제외되었습니다.
+STR_TRIVIA_MLNRVII  :이 오래됐지만 성공적인 디자인은 NRV II에서 중앙 저상부를 추가하면서 현대화되었습니다.
+STR_TRIVIA_MLNRVIII :이 현대적인 트램에 설치된 보기 대차는 헬싱키의 급한 곡선구간을 위해서 특별하게 제작되었습니다.
+STR_TRIVIA_NRVI     :NRV I은 헬싱키 트램에서 10년이 넘는 기간동안 출시된 최초의 신규 모델이었습니다. 다양한 디자인이 오늘날까지 사용되고 있습니다.
+STR_TRIVIA_NRVII    :실질적으로 NRV I의 일란성 쌍둥이 모델.

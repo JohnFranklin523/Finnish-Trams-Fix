@@ -1,0 +1,28 @@
+##grflangid 0x03
+##plural 2
+##gender f m m2
+STR_GRF_DESCRIPTION :Tramways utilisés en Finlande des tramways à cheval de la fin du 19ème siècle au trams articulés de nos jours.
+
+STR_PARAM_DEFAULT_LIVERY_NAME          :Livrée par défaut pour les nouveaux trams
+STR_PARAM_DEFAULT_LIVERY_DESC          :Choisissez la livrée par défaut pour les nouveaux tramways. Vous pouvez toujours changer en 2cc ou livrée réalistique.
+STR_PARAM_DEFAULT_LIVERY_OPT_REALISTIC :Réalistique
+
+STR_MORE_TEXT_LIVERIES    :Livrées
+STR_MORE_TEXT_DESIGNATION :Désignation
+
+STR_LIVERY_GREEN_YELLOW_ACCENTS :Jaune et vert accentués
+STR_LIVERY_HORSE                :Vert, uniformes bleus pour les conducteurs
+STR_LIVERY_YELLOW_GREEN         :Haut jaune, bas vert
+STR_LIVERY_YELLOW_PALE_GREEN    :Haut jaune, bas vert pâle
+
+STR_NAME_HORSE      :Tramway à cheval
+
+STR_TRIVIA_A3       :Commun en Suède et au Danemark aussi.
+STR_TRIVIA_A4       :Premier tramway complètement fermé en utilisation sur le réseau de tramway d'Helsinki.
+STR_TRIVIA_A12      :Achetés pour les jeux olympiques d'été de 1940 à Helsinki, qui ont été ultimement annulés à cause de la seconde guerre mondiale.
+STR_TRIVIA_HMIV     :Un design typique de cette époque, ce tram était quelquefois utilisé avec une remorque.
+STR_TRIVIA_HMV      :Peut être distingué de son petit frère par la vitre du conducteur inclinée. Ce design basique a été utilisé par Helsinki pendant plus de 50 ans.
+STR_TRIVIA_HORSE    :L'origine de la transportation par tramway en Finlande, ces créatures vaillantes ont été vite retirées au profit de tramways électriques.
+STR_TRIVIA_KUMMER   :Premier tramway électrique de Finlande. Il n'avait pas de portes, et n'avait qu'un pantographe de trolley pour l'alimentation en électricité.
+STR_TRIVIA_MLRVI    :L'inconnu "Vauriotram" (littéralement : Tramway endommageur) était très mal adapté pour les réseau de tramway d'Helsinki, et a été retiré rapidement du service…
+STR_TRIVIA_MLNRVIII :Les bogies tournantes de ce tramway moderne étaient conçues spécialement pour les pentes et courbes escarpées du réseau de tramway d'Helsinki.

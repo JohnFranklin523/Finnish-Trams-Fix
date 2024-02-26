@@ -1,0 +1,36 @@
+##grflangid 0x38
+##plural 6
+##gender middle male female
+##case nom lok aku vok dat ins gen
+STR_GRF_DESCRIPTION :Tramvaji korišteni u Finskoj od konjskih tramvaja s kraja 19. stoljeća do modernih zglobnih tramvaja.
+
+STR_PARAM_DEFAULT_LIVERY_NAME          :Osnovna livreja za nove tramvaje
+STR_PARAM_DEFAULT_LIVERY_DESC          :Odaberite osnovnu livreju za novokupljene tramvaje. Uvijek možete promijeniti u 2cc ili stvarnu livreju.
+STR_PARAM_DEFAULT_LIVERY_OPT_REALISTIC :Stvarna livreja
+
+STR_MORE_TEXT_LIVERIES    :Livreje
+STR_MORE_TEXT_DESIGNATION :Oznaka
+
+STR_LIVERY_CREAM_GREEN          :Krem gore, zelena dolje
+STR_LIVERY_GREEN_YELLOW_ACCENTS :Zelena, žuti ukrasi
+STR_LIVERY_HORSE                :Zelena, plave uniforme za vozače
+STR_LIVERY_NRVI                 :Bijele stranice, crveno gore i dno (livreja od prije 1986.)
+STR_LIVERY_WHITE_BLUE           :Bijela gore, plava dolje
+STR_LIVERY_YELLOW_GREEN         :Žuta gore, zelena dolje
+STR_LIVERY_YELLOW_PALE_GREEN    :Žuta gore, svijetlo zelena dolje
+
+STR_NAME_HORSE      :Konjski tramvaj
+
+STR_TRIVIA_A3       :Također uobičajen u Švedskoj i Danskoj.
+STR_TRIVIA_A4       :Prvi potpuno zatvoreni tramvaj u uporabi u tramvajskoj mreži u Helsinkiju
+STR_TRIVIA_A12      :Kupljen za Ljetne olimpijske igre u Helsinkiju 1940. godine, koje su potom otkazane radi 2. svjetskog rata.
+STR_TRIVIA_ARTICXL  :Nadolazeći Artic XL će imati dvosmjerne elemente kao vrata na obje strane. Koristiti će se na linijama lake željeznice između Helsinkija i Espooa.
+STR_TRIVIA_HMIV     :Uobičajeni dizajn iz tog vremena, ovaj tramvaj se ponekad koristio sa prikolicom.
+STR_TRIVIA_HMV      :Razlikuje se od svojeg manjeg brata po nagnutom vjetrobranskom staklu na vozačevoj kabini. Ovaj dizajn će služiti u Helsinkiju više od 50 godina.
+STR_TRIVIA_HORSE    :Početak tramvajskog prijevoza u Finskoj, ova plemenita stvorenja su ubrzo povučena iz službe nailaskom električnih tramvaja.
+STR_TRIVIA_KUMMER   :Prvi električni tramvaj u Finskoj. Nije imao vrata i bio je opremljen jednostavnom motkom za napajanje strujom.
+STR_TRIVIA_MLRVI    :Ozloglašeni "Vauriotram" (doslovni prijevod: "Tramvaj-šteta") nije bio pogodan za tramvajsku mrežu u Helsinkiju i povučen je iz službe prije isteka služnosti.
+STR_TRIVIA_MLNRVII  :Ovaj stari uspješan dizajn je modernizirani NRV II uz dodatak niskopodne sekcije u sredini.
+STR_TRIVIA_MLNRVIII :Na ovom modernom tramvaju, vozna postolja sa slobodnim okretanjem su dizajnirana posebno za strme zavoje i strmine koje se nalaze na linijama tramvaja u Helsinkiju.
+STR_TRIVIA_NRVI     :NRV I ja bio prvi model za Helsinki gradski prijevoz u više od deset godina. Neke varijante se koriste i danas.
+STR_TRIVIA_NRVII    :Gotovo identični blizanac od NRV I.

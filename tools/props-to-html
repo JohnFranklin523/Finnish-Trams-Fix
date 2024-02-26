@@ -1,0 +1,106 @@
+#!/usr/bin/env python3
+"""
+    Write properties of vehicles with climate set to other than
+    NO_CLIMATE into a html table.
+"""
+
+import re
+import sys
+
+html_template = '''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Finnish Trams preview</title>
+<style>
+table, td, th {{
+    border-spacing: 0px;
+    font-family: sans-serif;
+    font-size: 10px;
+}}
+table {{
+    border: 1px solid black;
+}}
+th {{
+    border-bottom: 1px solid black;
+}}
+th:not(:last-child) {{
+    border-right: 1px solid black;
+}}
+tr:not(:first-child):not(:last-child) td {{
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}}
+td:not(:last-child) {{
+    border-right: 1px solid rgba(0,0,0,.1);
+}}
+</style>
+</head>
+<body>
+{}
+</body>
+</html>
+'''
+
+
+important_props = [
+    'id', 'cargo_capacity', 'cost_factor', 'introduction_date', 'length',
+    'model_life', 'power', 'running_cost_factor', 'speed', 'weight'
+]
+
+
+def dicts_to_table(dicts, keys=None):
+    if not keys:
+        keys = sorted({k for d in dicts for k in d})
+    out = ['<table>', '<tr>']
+    for k in keys:
+        out.append('<th>{}</th>'.format(k))
+    out.append('</tr>')
+    for d in dicts:
+        out.append('<tr>')
+        for k in keys:
+            out.append('<td>{}</td>'.format(d.get(k, "")))
+        out.append('</tr>')
+    out.append('</table>')
+    return "\n".join(out)
+    
+
+
+def item_blocks(text):
+    match_pat = re.compile(r'''
+        item\s* \(FEAT_\w+ \s* , \s* (\w+) \s* \) \s* \{
+            \s* property \s* \{
+                (.*?)
+            \}
+        ''', re.DOTALL | re.VERBOSE)
+    for block in match_pat.findall(text):
+        yield block
+
+
+def dict_item(block_content):
+    out = {}
+    pat = re.compile(r'(\w+\s*:.*?);')
+    for keyval in pat.findall(block_content):
+        key, val = (v.strip() for v in keyval.split(':'))
+        out[key] = val
+    return out
+
+
+if __name__ == "__main__":
+    dicts = {}
+    with open(sys.argv[1]) as f:
+        nml = f.read()
+    for block in item_blocks(nml):
+        name = block[0]
+        dicts.setdefault(name, {})
+        props = dict_item(block[1])
+        dicts[name].update(props)
+    dicts_flat = []
+    for k in dicts:
+        if 'climates_available' in dicts[k] \
+                and dicts[k]['climates_available'] != 'NO_CLIMATE':
+            dicts[k]['id'] = k
+            dicts_flat.append(dicts[k])
+    with open(sys.argv[2], 'w') as f:
+        f.write(
+            html_template.format(dicts_to_table(dicts_flat, important_props)))

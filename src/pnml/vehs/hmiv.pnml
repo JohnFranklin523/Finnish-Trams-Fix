@@ -1,0 +1,47 @@
+#define VEH hmiv
+/*[[MAKE
+build/hmiv.png src/gfx/xcf/vehs/hm_iv_v.xcf
+    bg 2cc iv_features door_ind windows roofstuff lights panto;
+build/hmiv_open.png src/gfx/xcf/vehs/hm_iv_v.xcf
+    bg 2cc iv_features door_ind windows doors roofstuff lights panto;
+]]*/
+
+SPR_PUR(ID(spr_pur), "build/hmiv.png")
+SPR(ID(spr_def), "build/hmiv.png", 7)
+SPR(ID(spr_def_open), "build/hmiv_open.png", 7)
+spritegroup ID(sprg_def) {
+    loading: ID(spr_def_open);
+    loaded: ID(spr_def);
+}
+
+SWITCH_SUBTYPE(ID(sw_cst),
+    string(STR_SUBTYPE_REAL, string(STR_HKL), string(STR_LIVERY_YELLOW_GREEN))
+)
+SWITCH_RECOLOUR(ID(sw_cm),
+    recolour_hkl
+)
+
+PROPS_COMMON(VEH)
+PROPS(VEH,
+    cargo_capacity: 59;
+    cost_factor: 66;
+    introduction_date: date(1955,01,01);
+    length: 7;
+    loading_speed: 15;
+    name: string(STR_NAME_HMIV);
+    model_life: 60;
+    retire_early: 30;
+    power: 4*50 kW;
+    running_cost_factor: 66;
+    speed: 50 km/h;
+    weight: 19.8 ton;
+)
+GFX(VEH,
+    additional_text: MORE_TEXT("2", string(STR_D_HMIV), string(STR_TRIVIA_HMIV));
+    cargo_subtype_text: ID(sw_cst);
+    colour_mapping: ID(sw_cm);
+    default: ID(sprg_def);
+    purchase: ID(spr_pur);
+)
+
+#undef VEH

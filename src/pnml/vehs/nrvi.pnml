@@ -1,0 +1,90 @@
+#define VEH nrvi
+/*[[MAKE
+build/nrvi_1_old.png src/gfx/xcf/vehs/nrvi.xcf bg pur_nrv1_oldstyle 1 1_oldstyle panto;
+build/nrvi_1_old_open.png src/gfx/xcf/vehs/nrvi.xcf bg 1 1_oldstyle doors_1 panto;
+build/nrvi_2_old.png src/gfx/xcf/vehs/nrvi.xcf bg 3 3_nrv1 3_oldstyle;
+build/nrvi_2_old_open.png src/gfx/xcf/vehs/nrvi.xcf bg 3 3_nrv1 3_oldstyle doors_3;
+build/nrvi_1_new.png src/gfx/xcf/vehs/nrvi.xcf bg pur_nrv1 1 panto;
+build/nrvi_1_new_open.png src/gfx/xcf/vehs/nrvi.xcf bg 1 doors_1 panto;
+build/nrvi_2_new.png src/gfx/xcf/vehs/nrvi.xcf bg 3 3_nrv1;
+build/nrvi_2_new_open.png src/gfx/xcf/vehs/nrvi.xcf bg 3 3_nrv1 doors_3;
+]]*/
+
+SPR(ID(spr_1_old), "build/nrvi_1_old.png", 5)
+SPR(ID(spr_1_old_open), "build/nrvi_1_old_open.png", 5)
+SPR(ID(spr_2_old), "build/nrvi_2_old.png", 5)
+SPR(ID(spr_2_old_open), "build/nrvi_2_old_open.png", 5)
+SPR_PUR(ID(spr_pur), "build/nrvi_1_new.png")
+SPR(ID(spr_1_new), "build/nrvi_1_new.png", 5)
+SPR(ID(spr_1_new_open), "build/nrvi_1_new_open.png", 5)
+SPR(ID(spr_2_new), "build/nrvi_2_new.png", 5)
+SPR(ID(spr_2_new_open), "build/nrvi_2_new_open.png", 5)
+spritegroup ID(sprg_1_old) {
+    loading: ID(spr_1_old_open);
+    loaded: ID(spr_1_old);
+}
+spritegroup ID(sprg_2_old) {
+    loading: ID(spr_2_old_open);
+    loaded: ID(spr_2_old);
+}
+spritegroup ID(sprg_1_new) {
+    loading: ID(spr_1_new_open);
+    loaded: ID(spr_1_new);
+}
+spritegroup ID(sprg_2_new) {
+    loading: ID(spr_2_new_open);
+    loaded: ID(spr_2_new);
+}
+SWITCH(ID(sw_arti), extra_callback_info1,
+    1: VEH;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+)
+SWITCH_SUBTYPE(ID(sw_cst),
+    string(STR_SUBTYPE_REAL, string(STR_HKL), string(STR_LIVERY_CREAM_GREEN)
+    ),
+    2: string(STR_SUBTYPE_REAL, string(STR_HKL), string(STR_LIVERY_NRVI)
+    );
+)
+SWITCH_RECOLOUR(ID(sw_cm),
+    recolour_valmet,
+    2: recolour_oldnrv;
+)
+SWITCH(ID(sw_gfx_old), position_in_consist,
+    0: ID(sprg_1_old);
+    1: ID(sprg_2_old);
+)
+SWITCH(ID(sw_gfx_new), position_in_consist,
+    0: ID(sprg_1_new);
+    1: ID(sprg_2_new);
+)
+SWITCH(ID(sw_gfx), cargo_subtype,
+    2: ID(sw_gfx_old);
+    ID(sw_gfx_new);
+)
+
+PROPS_COMMON(VEH)
+PROPS(VEH,
+    cargo_capacity: 28;
+    cost_factor: 75;
+    introduction_date: date(1973,01,01);
+    length: 5;
+    loading_speed: 7;
+    name: string(STR_NAME_NRVI);
+    power: 2*130 kW;
+    model_life: 50;
+    retire_early: 30;
+    running_cost_factor: 75;
+    speed: 68 km/h;
+    weight: 28 ton;
+)
+GFX(VEH,
+    additional_text: MORE_TEXT("3", string(STR_D_NRVI),
+                               string(STR_TRIVIA_NRVI));
+    articulated_part: ID(sw_arti);
+    cargo_subtype_text: ID(sw_cst);
+    colour_mapping: ID(sw_cm);
+    default: ID(sw_gfx);
+    purchase: ID(spr_pur);
+)
+
+#undef VEH

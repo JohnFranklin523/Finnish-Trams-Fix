@@ -1,0 +1,45 @@
+#define VEH a4
+/*[[MAKE
+build/a4.png src/gfx/xcf/vehs/a4.xcf bg 2cc windows lights panto;
+build/a4_open.png src/gfx/xcf/vehs/a4.xcf bg 2cc windows lights doors panto;
+]]*/
+
+SPR_PUR(ID(spr_pur), "build/a4.png")
+SPR(ID(spr_def), "build/a4.png", 5)
+SPR(ID(spr_def_open), "build/a4_open.png", 5)
+spritegroup ID(sprg_def) {
+    loading: ID(spr_def_open);
+    loaded: ID(spr_def);
+}
+
+SWITCH_SUBTYPE(ID(sw_cst),
+    string(STR_SUBTYPE_REAL, string(STR_HKL), string(STR_LIVERY_YELLOW_GREEN))
+)
+SWITCH_RECOLOUR(ID(sw_cm),
+    recolour_hkl
+)
+
+PROPS_COMMON(VEH)
+PROPS(VEH,
+    cargo_capacity: 30;
+    cost_factor: 48;
+    introduction_date: date(1920,01,01);
+    length: 5;
+    loading_speed: 6;
+    name: string(STR_NAME_A4);
+    model_life: 65;
+    retire_early: 25;
+    power: 2*36 hpM;
+    running_cost_factor: 48;
+    speed: 50 km/h;
+    weight: 11 ton;
+)
+GFX(VEH,
+    additional_text: MORE_TEXT("2", string(STR_D_A4), string(STR_TRIVIA_A4));
+    cargo_subtype_text: ID(sw_cst);
+    colour_mapping: ID(sw_cm);
+    default: ID(sprg_def);
+    purchase: ID(spr_pur);
+)
+
+#undef VEH

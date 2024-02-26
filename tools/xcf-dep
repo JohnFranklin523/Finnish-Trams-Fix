@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+"""
+find image definitions in input files according to FORMAT,
+and emit a singular make rule for each image definition
+
+FORMAT = <png-file> <xcf-file> <layer> [<layer>...] ;
+"""
+
+import argparse
+import os.path
+import re
+import sys
+
+
+def get_strings(text):
+    for s in re.findall(
+            r'\s*([\w/]+\.png)\s*([\w/]+\.xcf)((?:\s+\w+)+)\s*;',
+            text, re.DOTALL):
+        yield (s[0], s[1], tuple(l.strip() for l in s[2].split()))
+
+
+def make_rule(targets, prerequisites, recipe):
+    temp = '{}: {}\n\t{}'
+    return temp.format(' '.join(targets), ' '.join(prerequisites), recipe)
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('-f', '--flags')
+    parser.add_argument('-i', '--input-file', metavar='<file>', nargs='*')
+    parser.add_argument('outdir')
+    args = parser.parse_args()
+    if args.input_file:
+        input_files = [open(f) for f in args.input_file]
+    else:
+        input_files = [sys.stdin]
+    for input_file in input_files:
+        for s in get_strings(input_file.read()):
+            png_name = os.path.split(s[0])[1]
+            dep_file = os.path.join(args.outdir, png_name + '.dep')
+
+            recipe = 'xcf2png ' + s[1] + ' '
+            if args.flags:
+                recipe += args.flags + ' '
+            recipe += s[0] + ' ' + ' '.join(s[2])
+
+            rule = make_rule([s[0]], [s[1], dep_file], recipe) + '\n'
+            # Don't create png dep if one with same contents already exists
+            if os.path.exists(dep_file):
+                with open(dep_file) as f:
+                    if f.read() == rule:
+                        continue
+            with open(dep_file, 'w') as f:
+                f.write(rule)
+        input_file.close()
+
+
+if __name__ == "__main__":
+    main()

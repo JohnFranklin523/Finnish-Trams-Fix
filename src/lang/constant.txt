@@ -1,0 +1,48 @@
+
+STR_GRF_NAME :Finnish Trams Fix{REPO_VERSION}
+STR_GRF_URL  :https://www.tt-forums.net/viewtopic.php?t=90219
+
+STR_PARAM_DEFAULT_LIVERY_OPT_2CC :2cc
+
+STR_MORE_TEXT :{SILVER}----------{}{BLACK}{STRING}: {GOLD}{STRING}{}{BLACK}{STRING}: {GOLD}{STRING}{}{BLACK}{STRING}
+
+STR_HKL  :HKL
+STR_HRO  :HRO
+STR_TUKL :TUKL
+
+STR_SUBTYPE_2CC  : - 2cc
+STR_SUBTYPE_REAL : - {STRING} ({STRING})
+
+STR_D_A3          :HRO 36-112 / HKL 1-67
+STR_D_A4          :HRO 151-170 / HKL 71-90
+STR_D_A12         :HRO 431-436 / HKL 181-186
+STR_D_ARTICXL     :HKL 601-629
+STR_D_HMIV        :HKL 301-330
+STR_D_HMV         :HKL 1-15
+STR_D_HORSE       :HRO 1-15
+STR_D_KUMMER      :HRO 1-35
+STR_D_MLRVI       :HKL 201-240
+STR_D_MLNRVII     :HKL 71-112 (ex NRV II)
+STR_D_MLNRVIII    :HKL 401-460
+STR_D_NRVI        :HKL 31-70
+STR_D_NRVII       :HKL 71-112
+
+STR_NAME_A3       :A3 "Pikkuruotsalainen"
+STR_NAME_A4       :A4 "Jenkki"
+STR_NAME_A12      :A12 "Arkku"
+STR_NAME_ARTICXL  :Jokeri "Artic XL"
+STR_NAME_KUMMER   :Kummer
+STR_NAME_HMIV     :HM IV "Ratti-Karia"
+STR_NAME_HMV      :HM V "Keppi-Karia"
+STR_NAME_MLRVI    :MLRV I "Vario"
+STR_NAME_MLNRVII  :MLNRV II "Välipala"
+STR_NAME_MLNRVIII :MLNRV III "Artic"
+STR_NAME_NRVI     :NRV I "Nivel"
+STR_NAME_NRVII    :NRV II "Sarana"
+
+STR_NAME_TEST4   :4lu test tram
+STR_NAME_TEST46W :4lu test tram (thin)
+STR_NAME_TEST6   :6lu test tram
+STR_NAME_TEST6A  :6lu test tram (2-part articulated)
+STR_NAME_TEST8   :8lu test tram
+STR_NAME_TEST86W :8lu test tram (thin)

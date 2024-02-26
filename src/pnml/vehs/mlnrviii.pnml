@@ -1,0 +1,71 @@
+#define VEH mlnrviii
+/*[[MAKE
+build/mlnrviii_front.png src/gfx/xcf/vehs/mlnrviii.xcf bg 1 panto;
+build/mlnrviii_front_open.png src/gfx/xcf/vehs/mlnrviii.xcf bg 1 doors_1 panto;
+build/mlnrviii_middle.png src/gfx/xcf/vehs/mlnrviii.xcf bg 3;
+build/mlnrviii_middle_open.png src/gfx/xcf/vehs/mlnrviii.xcf bg 3 doors_3;
+build/mlnrviii_rear.png src/gfx/xcf/vehs/mlnrviii.xcf bg 5;
+build/mlnrviii_rear_open.png src/gfx/xcf/vehs/mlnrviii.xcf bg 5 doors_5;
+]]*/
+
+SPR_PUR(ID(spr_pur), "build/mlnrviii_front.png")
+SPR(ID(spr_front), "build/mlnrviii_front.png", 5)
+SPR(ID(spr_front_open), "build/mlnrviii_front_open.png", 5)
+SPR(ID(spr_middle), "build/mlnrviii_middle.png", 5)
+SPR(ID(spr_middle_open), "build/mlnrviii_middle_open.png", 5)
+SPR(ID(spr_rear), "build/mlnrviii_rear.png", 5)
+SPR(ID(spr_rear_open), "build/mlnrviii_rear_open.png", 5)
+spritegroup ID(sprg_front) {
+    loading: ID(spr_front_open);
+    loaded: ID(spr_front);
+}
+spritegroup ID(sprg_middle) {
+    loading: ID(spr_middle_open);
+    loaded: ID(spr_middle);
+}
+spritegroup ID(sprg_rear) {
+    loading: ID(spr_rear_open);
+    loaded: ID(spr_rear);
+}
+
+SWITCH(ID(sw_arti), extra_callback_info1,
+    1..2: VEH;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+)
+SWITCH_SUBTYPE(ID(sw_cst),
+    string(STR_SUBTYPE_REAL, string(STR_HKL), string(STR_LIVERY_YELLOW_GREEN))
+)
+SWITCH_RECOLOUR(ID(sw_cm),
+    recolour_hkl
+)
+SWITCH(ID(sw_gfx), position_in_consist,
+    0: ID(sprg_front);
+    1: ID(sprg_middle);
+    2: ID(sprg_rear);
+)
+
+PROPS_COMMON(VEH)
+PROPS(VEH,
+    cargo_capacity: 34;
+    cost_factor: 120;
+    introduction_date: date(2013,01,01);
+    length: 5;
+    loading_speed: 9;
+    name: string(STR_NAME_MLNRVIII);
+    model_life: VEHICLE_NEVER_EXPIRES;
+    power: 8*65 kW;
+    running_cost_factor: 120;
+    speed: 80 km/h;
+    weight: 41.6 ton;
+)
+GFX(VEH,
+    additional_text: MORE_TEXT("2", string(STR_D_MLNRVIII),
+                               string(STR_TRIVIA_MLNRVIII));
+    articulated_part: ID(sw_arti);
+    cargo_subtype_text: ID(sw_cst);
+    colour_mapping: ID(sw_cm);
+    default: ID(sw_gfx);
+    purchase: ID(spr_pur);
+)
+
+#undef VEH

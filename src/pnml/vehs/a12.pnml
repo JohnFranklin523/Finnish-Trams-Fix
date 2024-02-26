@@ -1,0 +1,45 @@
+#define VEH a12
+/*[[MAKE
+build/a12.png src/gfx/xcf/vehs/a12.xcf bg 2cc windows lights panto;
+build/a12_open.png src/gfx/xcf/vehs/a12.xcf bg 2cc windows lights doors panto;
+]]*/
+
+SPR_PUR(ID(spr_pur), "build/a12.png")
+SPR(ID(spr_def), "build/a12.png", 6)
+SPR(ID(spr_def_open), "build/a12_open.png", 6)
+spritegroup ID(sprg_def) {
+    loading: ID(spr_def_open);
+    loaded: ID(spr_def);
+}
+
+SWITCH_SUBTYPE(ID(sw_cst),
+    string(STR_SUBTYPE_REAL, string(STR_HKL), string(STR_LIVERY_YELLOW_GREEN))
+)
+SWITCH_RECOLOUR(ID(sw_cm),
+    recolour_hkl
+)
+
+PROPS_COMMON(VEH)
+PROPS(VEH,
+    cargo_capacity: 40;
+    cost_factor: 60;
+    introduction_date: date(1941,01,01);
+    length: 6;
+    loading_speed: 10;
+    name: string(STR_NAME_A12);
+    model_life: 60;
+    retire_early: 25;
+    power: 4*49 hpM;
+    running_cost_factor: 60;
+    speed: 50 km/h;
+    weight: 15.9 ton;
+)
+GFX(VEH,
+    additional_text: MORE_TEXT("2", string(STR_D_A12), string(STR_TRIVIA_A12));
+    cargo_subtype_text: ID(sw_cst);
+    colour_mapping: ID(sw_cm);
+    default: ID(sprg_def);
+    purchase: ID(spr_pur);
+)
+
+#undef VEH

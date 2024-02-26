@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+
+import argparse
+import re
+import sys
+
+
+def blocks(start_tag, end_tag, text):
+    matcher = '.*'
+    # Greedy only if there are no tags, or there is only start tag
+    if end_tag:
+        matcher += '?'
+    pat = re.compile(r'{}({}){}'.format(re.escape(start_tag), matcher,
+                                        re.escape(end_tag)), re.DOTALL)
+    for block in pat.findall(text):
+        yield block
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(
+        description="Extract contents between tags from input file(s)")
+    parser.add_argument(
+        '-o', '--output', help="write to <file> instead of stdout",
+        metavar='<file>')
+    parser.add_argument('-s', '--start-tag', default='', dest='start')
+    parser.add_argument('-e', '--end-tag', default='', dest='end')
+    parser.add_argument(
+        'input_file', help="read from stdin if not specified",
+        metavar='<infile>', nargs='*')
+    args = parser.parse_args()
+    if args.input_file:
+        input_files = [open(f) for f in args.input_file]
+    else:
+        input_files = [sys.stdin]
+    if args.output:
+        output = open(args.output, 'w')
+    else:
+        output = sys.stdout
+    for f in input_files:
+        for block in blocks(args.start, args.end, f.read()):
+            output.write(block)
+        f.close()
+    output.write('\n')
+    output.close()

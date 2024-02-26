@@ -1,0 +1,34 @@
+##grflangid 0x1f
+##plural 0
+STR_GRF_DESCRIPTION :Trams in gebruik in Finland vanaf de late 19e eeuw: door paarden getrokken trams tot moderne gelede trams.
+
+STR_PARAM_DEFAULT_LIVERY_NAME          :Standaard-kleurstelling voor nieuwe trams
+STR_PARAM_DEFAULT_LIVERY_DESC          :Kies de standaard-kleurstelling voor nieuwe trams. Je kunt altijd ombouwen naar 2cc of realistische kleurstelling.
+STR_PARAM_DEFAULT_LIVERY_OPT_REALISTIC :Realistisch
+
+STR_MORE_TEXT_LIVERIES    :Kleurstellingen
+STR_MORE_TEXT_DESIGNATION :Aanduiding
+
+STR_LIVERY_CREAM_GREEN          :Crème bovenkant, groene onderkant
+STR_LIVERY_GREEN_YELLOW_ACCENTS :Groen, gele accenten
+STR_LIVERY_HORSE                :Groen, blauwe uniforms voor bestuurders
+STR_LIVERY_NRVI                 :Witte zijkanten, rode boven- en onderkant (kleurenschema vóór 1986)
+STR_LIVERY_WHITE_BLUE           :Witte bovenkant, blauwe onderkant
+STR_LIVERY_YELLOW_GREEN         :Gele bovenkant, groene onderkant
+STR_LIVERY_YELLOW_PALE_GREEN    :Gele bovenkant, bleekgroene onderkant
+
+STR_NAME_HORSE      :Paardentram
+
+STR_TRIVIA_A3       :Ook in Zweden en Denemarken veel gebruikt.
+STR_TRIVIA_A4       :Eerste volledig gesloten tram, in gebruik in het tramnetwerk van Helsinki.
+STR_TRIVIA_A12      :Aangeschaft voor de Olympische Zomerspelen in Helsinki in 1940, die uiteindelijk niet doorgingen vanwege de Tweede Wereldoorlog.
+STR_TRIVIA_ARTICXL  :De komende Artic XL zal tweerichtingselementen hebben, zoals deuren aan beide kanten. Hij zal dienen als lichte railverbinding tussen Helsinki en Espoo.
+STR_TRIVIA_HMIV     :Een typisch ontwerp voor deze tijd. Deze tram werd soms gebruikt met een aanhanger.
+STR_TRIVIA_HMV      :Kan worden onderscheiden van zijn kleine broer door het schuine bestuurdersraam. Dit algemene ontwerp heeft meer dan vijftig jaar dienst gedaan in Helsinki.
+STR_TRIVIA_HORSE    :Deze edele dieren vormden de oorsprong voor tramtransport in Finland, maar werden snel vervangen door elektrische trams.
+STR_TRIVIA_KUMMER   :Eerste elektrische tram in Finland. Hij had geen deuren en een simpele pantograaf voor elektrificatie.
+STR_TRIVIA_MLRVI    :De beruchte 'Vauriotram' (letterlijke vertaling: 'Schadetram') was uiteindelijk ongeschikt voor het tramnetwerk van Helsinki en werd al snel uit dienst genomen.
+STR_TRIVIA_MLNRVII  :Dit oude maar succesvolle ontwerp is gemoderniseerd op basis van de NRV II door een middendeel met lage vloer toe te voegen.
+STR_TRIVIA_MLNRVIII :De vrij draaiende onderstellen van deze moderne tram zijn speciaal ontworpen voor de krappe bochten en steile hellingen van het tramnetwerk van Helsinki.
+STR_TRIVIA_NRVI     :NRV I was het eerste nieuwe model voor het stadsvervoer van Helsinki in meer dan tien jaar. Varianten van het ontwerp worden ook nu nog gebruikt.
+STR_TRIVIA_NRVII    :De vrijwel identieke tweelingbroer van de NRV I.

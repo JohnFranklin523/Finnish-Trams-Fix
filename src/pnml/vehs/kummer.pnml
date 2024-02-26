@@ -1,0 +1,39 @@
+#define VEH kummer
+/*[[MAKE
+build/kummer.png src/gfx/xcf/vehs/kummer.xcf bg 2cc panto;
+]]*/
+
+SPR_PUR(ID(spr_pur), "build/kummer.png")
+SPR(ID(spr_def), "build/kummer.png", 4)
+
+SWITCH_SUBTYPE(ID(sw_cst),
+    string(STR_SUBTYPE_REAL, string(STR_HRO),
+    string(STR_LIVERY_GREEN_YELLOW_ACCENTS))
+)
+SWITCH_RECOLOUR(ID(sw_cm), recolour_hkl)
+
+PROPS_COMMON(VEH)
+PROPS(VEH,
+    cargo_capacity: 18;
+    cost_factor: 30;
+    introduction_date: date(1900,01,01);
+    length: 4;
+    loading_speed: 5;
+    name: string(STR_NAME_KUMMER);
+    model_life: 50;
+    retire_early: 25;
+    power: 2*25 hpM;
+    running_cost_factor: 30;
+    speed: 40 km/h;
+    weight: 8.5 ton;
+)
+GFX(VEH,
+    additional_text: MORE_TEXT("2", string(STR_D_KUMMER),
+                               string(STR_TRIVIA_KUMMER));
+    cargo_subtype_text: ID(sw_cst);
+    colour_mapping: ID(sw_cm);
+    default: ID(spr_def);
+    purchase: ID(spr_pur);
+)
+
+#undef VEH

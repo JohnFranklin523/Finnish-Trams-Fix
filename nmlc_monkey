@@ -1,0 +1,16 @@
+#! /usr/bin/env python3
+
+# Monkey patch for nml to correct display speed rounding errors,
+# until some nml dev fixes it in upstream
+
+from distutils.spawn import find_executable
+import os.path
+import sys
+
+sys.path.append(os.path.dirname(os.path.realpath(find_executable('nmlc'))))
+
+from nml import main
+
+
+if __name__ == "__main__":
+    main.run()

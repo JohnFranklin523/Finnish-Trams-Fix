@@ -1,0 +1,15 @@
+sort(FEAT_ROADVEHS, [
+    horse,
+    kummer,
+    a3,
+    a4,
+    a12,
+    hmiv,
+    hmv,
+    nrvi,
+    nrvii,
+    mlrvi,
+    mlnrvii,
+    mlnrviii,
+    articxl
+]);

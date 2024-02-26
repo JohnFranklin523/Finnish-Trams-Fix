@@ -1,0 +1,34 @@
+##grflangid 0x35
+##plural 0
+STR_GRF_DESCRIPTION :Suomessa käytettyjä raitiovaunuja 1800-luvun lopun hevosvetoisista vaunuista nykypäivän nivelvaunuihin.
+
+STR_PARAM_DEFAULT_LIVERY_NAME          :Oletusväritys uusille raitiovaunuille
+STR_PARAM_DEFAULT_LIVERY_DESC          :Valitse oletusväritys uusille raitiovaunuille. Voit aina sovittaa haluamasi värityksen valinnasta riippumatta.
+STR_PARAM_DEFAULT_LIVERY_OPT_REALISTIC :Todellinen
+
+STR_MORE_TEXT_LIVERIES    :Väritykset
+STR_MORE_TEXT_DESIGNATION :Numerointi
+
+STR_LIVERY_CREAM_GREEN          :Kermanvärinen yläosa, vihreä alaosa
+STR_LIVERY_GREEN_YELLOW_ACCENTS :Vihreä, keltaiset yksityiskohdat
+STR_LIVERY_HORSE                :Vihreä, siniset kuljettajien uniformut
+STR_LIVERY_NRVI                 :Valkoiset kyljet, punainen ylä- ja alaosa (ennen vuotta 1986 käytössä ollut väritys)
+STR_LIVERY_WHITE_BLUE           :Valkoinen yläosa, sininen alaosa
+STR_LIVERY_YELLOW_GREEN         :Keltainen yläosa, vihreä alaosa
+STR_LIVERY_YELLOW_PALE_GREEN    :Keltainen yläosa, haalean vihreä alaosa
+
+STR_NAME_HORSE      :Hevosvaunu
+
+STR_TRIVIA_A3       :Yleisesti käytössä myös Ruotsissa ja Tanskassa.
+STR_TRIVIA_A4       :Ensimmäinen täysin suljettu raitiovaunu Suomessa.
+STR_TRIVIA_A12      :Vaunu hankittiin vuoden 1940 Helsingin olympialaisia varten, jotka lopulta peruttiin toisen maailmansodan vuoksi.
+STR_TRIVIA_ARTICXL  :Artic XL on varustettu kaksisuuntaisilla ominaisuuksilla, kuten molemmanpuoleisilla ovilla. Se tulee käyttöön Helsinki-Espoo pikaraitiolinjalle.
+STR_TRIVIA_HMIV     :Tätä aikakaudelle tavanomaista raitiovaunua käytettiin joskus perävaunun kanssa.
+STR_TRIVIA_HMV      :Erottuu pikkuveljestään kaltevalla tuulilasillansa. Tämä luotettava malli palveli Helsinkiä yli viisikymmentä vuotta.
+STR_TRIVIA_HORSE    :Nämä suomalaisen raitiovaunuliikenteen uljaat pioneerit päästettiin pian eläkepäiville moderninen sähköistettyjen raitiovaunujen tieltä.
+STR_TRIVIA_KUMMER   :Ensimmäinen sähköistetty raitiovaunu Suomessa. Vaunussa oli avonaiset oviaukot, ja yksinkertainen trolleyvirroitin.
+STR_TRIVIA_MLRVI    :Surullisenkuuluisa "Vauriotram" ei soveltunut Helsingin haastavaan raitiotieverkostoon. Vaunut poistettiin käytöstä ennenaikaisesti.
+STR_TRIVIA_MLNRVII  :Tämä matalalattiaisella väliosalla varustettu raitiovaunu on nykyaikaistettu versio NRV II:sta.
+STR_TRIVIA_MLNRVIII :Vaunun vapaasti kääntyvät telit suunniteltiin erityisesti Helsingin raitiotieverkon tiukkoihin mutkiin ja nousuihin.
+STR_TRIVIA_NRVI     :NRV I oli ensimmäinen uusi raitiovaunumalli Helsinkin kaupungin liikennelaitokselle yli vuosikymmeneen. Versioita tästä mallista on edelleen käytössä.
+STR_TRIVIA_NRVII    :Lähes identtinen NRV I:n kaksoisveli.

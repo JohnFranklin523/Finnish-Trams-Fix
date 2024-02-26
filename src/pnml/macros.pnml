@@ -1,0 +1,120 @@
+/*
+    Define VEH for each vehicle, then use ID(block_name) to get a block
+    name with the contents of VEH appended to block_name. You can
+    emulate a namespace for each vehicle this way.  Remember to unset
+    VEH at the end of vehicle declaration.
+*/
+
+
+/*
+    To anyone wtfing at the multiple levels of indirection:
+    https://stackoverflow.com/questions/1489932/how-to-concatenate-twice-with-the-c-preprocessor-and-expand-a-macro-as-in-arg
+*/
+#define ID__(veh, name) veh ## _ ## name
+#define ID_(veh, name) ID__(veh, name)
+#define ID(name) ID_(VEH, name)
+
+#define SWITCH(block_id, var, ...) \
+switch(FEAT_ROADVEHS, SELF, block_id, var) { \
+    __VA_ARGS__ \
+}
+
+#define SWITCH_RECOLOUR_(block_id, recolour_id, ...) \
+switch(FEAT_ROADVEHS, SELF, block_id ## _p1, cargo_subtype) { \
+    0: CB_FAILED; \
+    1: recolour_id; \
+    __VA_ARGS__ \
+    PALETTE_IDENTITY; \
+} \
+switch(FEAT_ROADVEHS, SELF, block_id ## _p2, cargo_subtype) { \
+    0: recolour_id; \
+    1: CB_FAILED; \
+    __VA_ARGS__ \
+    PALETTE_IDENTITY; \
+} \
+switch(FEAT_ROADVEHS, SELF, block_id, param_default_livery) { \
+    0: block_id ## _p1; \
+    1: block_id ## _p2; \
+}
+#define SWITCH_RECOLOUR(block_id, recolour_id, ...) \
+SWITCH_RECOLOUR_(block_id, recolour_id, __VA_ARGS__)
+
+#define SWITCH_SUBTYPE_(block_id, recolour_subtype_str, ...) \
+switch(FEAT_ROADVEHS, SELF, block_id ## _p1, cargo_subtype) { \
+    0: string(STR_SUBTYPE_2CC); \
+    1: recolour_subtype_str; \
+    __VA_ARGS__ \
+    CB_RESULT_NO_TEXT; \
+} \
+switch(FEAT_ROADVEHS, SELF, block_id ## _p2, cargo_subtype) { \
+    0: recolour_subtype_str; \
+    1: string(STR_SUBTYPE_2CC); \
+    __VA_ARGS__ \
+    CB_RESULT_NO_TEXT; \
+} \
+switch(FEAT_ROADVEHS, SELF, block_id, param_default_livery) { \
+    0: block_id ## _p1; \
+    1: block_id ## _p2; \
+}
+#define SWITCH_SUBTYPE(block_id, recolour_subtype_str, ...) \
+SWITCH_SUBTYPE_(block_id, recolour_subtype_str, __VA_ARGS__)
+
+#define SPR(block_id, image, length) \
+spriteset(block_id, image) { \
+    tmpl_def(length) \
+}
+#define SPR_PUR(block_id, image) \
+spriteset(block_id, image) { \
+    tmpl_pur() \
+}
+
+#define PROPS_COMMON(block_id) \
+item (FEAT_ROADVEHS, block_id) { \
+    property { \
+        cargo_allow_refit: [PASS, TOUR, YETI, YETY]; \
+        cargo_disallow_refit: []; \
+        climates_available: ALL_CLIMATES; \
+        default_cargo_type: PASS; \
+        misc_flags: bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_AUTOREFIT, \
+                            ROADVEH_FLAG_TRAM); \
+        non_refittable_cargo_classes: NO_CARGO_CLASS; \
+        refit_cost: 0; \
+        refittable_cargo_classes: bitmask(CC_PASSENGERS); \
+        reliability_decay: 20; \
+        running_cost_base: RUNNING_COST_ROADVEH; \
+        sprite_id: SPRITE_ID_NEW_ROADVEH; \
+        vehicle_life: 30; \
+    } \
+}
+#define PROPS_COMMON_ARTI(block_id) \
+item (FEAT_ROADVEHS, block_id) { \
+    property { \
+        cargo_allow_refit: []; \
+        cargo_disallow_refit: []; \
+        climates_available: NO_CLIMATE; \
+        default_cargo_type: PASS; \
+        loading_speed: 5; \
+        misc_flags: bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_AUTOREFIT, \
+                            ROADVEH_FLAG_TRAM); \
+        non_refittable_cargo_classes: NO_CARGO_CLASS; \
+        refit_cost: 0; \
+        refittable_cargo_classes: bitmask(CC_PASSENGERS); \
+        sprite_id: SPRITE_ID_NEW_ROADVEH; \
+    } \
+}
+#define PROPS(block_id, ...) \
+item (FEAT_ROADVEHS, block_id) { \
+    property { \
+        __VA_ARGS__ \
+    } \
+}
+#define GFX(block_id, ...) \
+item (FEAT_ROADVEHS, block_id) { \
+    graphics { \
+        __VA_ARGS__ \
+    } \
+}
+
+#define MORE_TEXT(livery_count, str_designation, str_trivia) \
+string(STR_MORE_TEXT, string(STR_MORE_TEXT_LIVERIES), livery_count, \
+       string(STR_MORE_TEXT_DESIGNATION), str_designation, str_trivia)

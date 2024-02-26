@@ -1,0 +1,83 @@
+#define VEH articxl
+/*[[MAKE
+build/articxl_front.png src/gfx/xcf/vehs/mlnrviii.xcf bg 1 1_xl panto;
+build/articxl_front_open.png src/gfx/xcf/vehs/mlnrviii.xcf bg 1 1_xl doors_1 doors_1_xl panto;
+build/articxl_2.png src/gfx/xcf/vehs/mlnrviii.xcf bg 2 panto;
+build/articxl_middle.png src/gfx/xcf/vehs/mlnrviii.xcf bg 3 3_xl;
+build/articxl_middle_open.png src/gfx/xcf/vehs/mlnrviii.xcf bg 3 3_xl doors_3 doors_3_xl;
+build/articxl_4.png src/gfx/xcf/vehs/mlnrviii.xcf bg 4 panto;
+build/articxl_rear.png src/gfx/xcf/vehs/mlnrviii.xcf bg 5 5_xl;
+build/articxl_rear_open.png src/gfx/xcf/vehs/mlnrviii.xcf bg 5 5_xl doors_5 doors_5_xl;
+]]*/
+
+SPR_PUR(ID(spr_pur), "build/articxl_2.png")
+SPR(ID(spr_front), "build/articxl_front.png", 5)
+SPR(ID(spr_front_open), "build/articxl_front_open.png", 5)
+SPR(ID(spr_2), "build/articxl_2.png", 3)
+SPR(ID(spr_middle), "build/articxl_middle.png", 5)
+SPR(ID(spr_middle_open), "build/articxl_middle_open.png", 5)
+SPR(ID(spr_4), "build/articxl_4.png", 3)
+SPR(ID(spr_rear), "build/articxl_rear.png", 5)
+SPR(ID(spr_rear_open), "build/articxl_rear_open.png", 5)
+spritegroup ID(sprg_front) {
+    loading: ID(spr_front_open);
+    loaded: ID(spr_front);
+}
+spritegroup ID(sprg_middle) {
+    loading: ID(spr_middle_open);
+    loaded: ID(spr_middle);
+}
+spritegroup ID(sprg_rear) {
+    loading: ID(spr_rear_open);
+    loaded: ID(spr_rear);
+}
+
+SWITCH(ID(sw_arti), extra_callback_info1,
+    1..4: VEH;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+)
+SWITCH_SUBTYPE(ID(sw_cst),
+    string(STR_SUBTYPE_REAL, string(STR_HKL), string(STR_LIVERY_WHITE_BLUE))
+)
+SWITCH_RECOLOUR(ID(sw_cm),
+    recolour_fin
+)
+SWITCH(ID(sw_gfx), position_in_consist,
+    0: ID(sprg_front);
+    1: ID(spr_2);
+    2: ID(sprg_middle);
+    3: ID(spr_4);
+    4: ID(sprg_rear);
+)
+SWITCH(ID(sw_len), position_in_consist,
+    1: 3;
+    3: 3;
+    default: 5;
+)
+
+PROPS_COMMON(VEH)
+PROPS(VEH,
+    cargo_capacity: 30;
+    cost_factor: 150;
+    introduction_date: date(2022,01,01);
+    length: 5;
+    loading_speed: 6;
+    name: string(STR_NAME_ARTICXL);
+    model_life: VEHICLE_NEVER_EXPIRES;
+    power: 12*65 kW;
+    running_cost_factor: 150;
+    speed: 100 km/h;
+    weight: 52 ton;
+)
+GFX(VEH,
+    additional_text: MORE_TEXT("2", string(STR_D_ARTICXL),
+                               string(STR_TRIVIA_ARTICXL));
+    articulated_part: ID(sw_arti);
+    cargo_subtype_text: ID(sw_cst);
+    colour_mapping: ID(sw_cm);
+    default: ID(sw_gfx);
+    length: ID(sw_len);
+    purchase: ID(spr_pur);
+)
+
+#undef VEH
